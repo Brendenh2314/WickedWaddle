@@ -1,0 +1,213 @@
+[gd_scene load_steps=12 format=3 uid="uid://b7xpd103iu4gt"]
+
+[ext_resource type="Script" path="res://scripts/level_menu.gd" id="1_mwge4"]
+[ext_resource type="Texture2D" uid="uid://cipke1ntpjakq" path="res://assets/sprites/ui/ui_assets_background.png" id="2_pwpul"]
+[ext_resource type="Texture2D" uid="uid://danh2jyssjk82" path="res://assets/sprites/final/ui_assets_final.png" id="3_fobps"]
+[ext_resource type="FontFile" uid="uid://bbph01mkrijr0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_qdvbw"]
+[ext_resource type="StyleBox" uid="uid://c42j5jhq0a3id" path="res://assets/colors/level_menu_button_normal.tres" id="5_qw4lk"]
+[ext_resource type="StyleBox" uid="uid://bc7chk5o3700j" path="res://assets/colors/level_menu_button_hover.tres" id="6_ekr4q"]
+[ext_resource type="StyleBox" uid="uid://c7lahphaonb7o" path="res://assets/colors/home_button_normal.tres" id="7_a6qkb"]
+[ext_resource type="StyleBox" uid="uid://ckljefd674q3w" path="res://assets/colors/home_button_hover.tres" id="8_i3chp"]
+[ext_resource type="PackedScene" uid="uid://dugbt3g3acp0e" path="res://scenes/achievement_menu.tscn" id="9_kdrgp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk6kk"]
+atlas = ExtResource("3_fobps")
+region = Rect2(360, 20, 160, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u87qa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk6kk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="levels" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mwge4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pwpul")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 250
+theme_override_constants/margin_bottom = 50
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="MarginContainer"]
+position = Vector2(570.833, 326)
+scale = Vector2(4.36458, 4.64167)
+sprite_frames = SubResource("SpriteFrames_u87qa")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="LevelVBox" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/MarginContainer/LevelVBox"]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Level1Button" type="Button" parent="MarginContainer/MarginContainer/LevelVBox/GridContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qdvbw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = ExtResource("6_ekr4q")
+theme_override_styles/normal = ExtResource("5_qw4lk")
+text = "Level 1"
+
+[node name="Level2Button" type="Button" parent="MarginContainer/MarginContainer/LevelVBox/GridContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qdvbw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = ExtResource("6_ekr4q")
+theme_override_styles/normal = ExtResource("5_qw4lk")
+text = "Level 2"
+
+[node name="Level3Button" type="Button" parent="MarginContainer/MarginContainer/LevelVBox/GridContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qdvbw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = ExtResource("6_ekr4q")
+theme_override_styles/normal = ExtResource("5_qw4lk")
+text = "Level 3"
+
+[node name="Level4Button" type="Button" parent="MarginContainer/MarginContainer/LevelVBox/GridContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qdvbw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = ExtResource("6_ekr4q")
+theme_override_styles/normal = ExtResource("5_qw4lk")
+text = "Level 4"
+
+[node name="Level5Button" type="Button" parent="MarginContainer/MarginContainer/LevelVBox/GridContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qdvbw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = ExtResource("6_ekr4q")
+theme_override_styles/normal = ExtResource("5_qw4lk")
+text = "Level 5"
+
+[node name="Level6Button" type="Button" parent="MarginContainer/MarginContainer/LevelVBox/GridContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qdvbw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = ExtResource("6_ekr4q")
+theme_override_styles/normal = ExtResource("5_qw4lk")
+text = "Level 6"
+
+[node name="Level7Button" type="Button" parent="MarginContainer/MarginContainer/LevelVBox/GridContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qdvbw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = ExtResource("6_ekr4q")
+theme_override_styles/normal = ExtResource("5_qw4lk")
+text = "Level 7"
+
+[node name="Level8Button" type="Button" parent="MarginContainer/MarginContainer/LevelVBox/GridContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qdvbw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = ExtResource("6_ekr4q")
+theme_override_styles/normal = ExtResource("5_qw4lk")
+text = "Level 8"
+
+[node name="Level9Button" type="Button" parent="MarginContainer/MarginContainer/LevelVBox/GridContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qdvbw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = ExtResource("6_ekr4q")
+theme_override_styles/normal = ExtResource("5_qw4lk")
+text = "Level 9"
+
+[node name="Level10Button" type="Button" parent="MarginContainer/MarginContainer/LevelVBox/GridContainer"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_qdvbw")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = ExtResource("6_ekr4q")
+theme_override_styles/normal = ExtResource("5_qw4lk")
+text = "Level 10"
+
+[node name="LevelLable" type="Label" parent="."]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 120.0
+offset_right = 696.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("4_qdvbw")
+theme_override_font_sizes/font_size = 40
+text = "Levels"
+
+[node name="HomeButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 29.0001
+offset_top = 550.0
+offset_right = 681.0
+offset_bottom = 1098.0
+scale = Vector2(0.116235, 0.124726)
+theme_override_styles/focus = ExtResource("8_i3chp")
+theme_override_styles/disabled = ExtResource("8_i3chp")
+theme_override_styles/hover = ExtResource("8_i3chp")
+theme_override_styles/pressed = ExtResource("8_i3chp")
+theme_override_styles/normal = ExtResource("7_a6qkb")
+
+[node name="AchievementButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1048.0
+offset_top = 550.0
+offset_right = 1700.0
+offset_bottom = 1098.0
+scale = Vector2(0.116235, 0.124726)
+theme_override_styles/focus = ExtResource("8_i3chp")
+theme_override_styles/disabled = ExtResource("8_i3chp")
+theme_override_styles/hover = ExtResource("8_i3chp")
+theme_override_styles/pressed = ExtResource("8_i3chp")
+theme_override_styles/normal = ExtResource("7_a6qkb")
+
+[node name="AchievementMenu" parent="." instance=ExtResource("9_kdrgp")]
+visible = false
+layout_mode = 1
+
+[connection signal="show_achievement_menu" from="." to="AchievementMenu" method="_on_levels_show_achievement_menu"]
+[connection signal="pressed" from="AchievementButton" to="." method="_on_achievement_button_pressed"]

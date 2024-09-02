@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm3j45emawysw"]
+
+[ext_resource type="FontFile" uid="uid://bbph01mkrijr0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_qb1d1"]
+[ext_resource type="StyleBox" uid="uid://c42j5jhq0a3id" path="res://assets/colors/level_menu_button_normal.tres" id="3_mjhve"]
+[ext_resource type="StyleBox" uid="uid://bc7chk5o3700j" path="res://assets/colors/level_menu_button_hover.tres" id="4_qhkv1"]
+
+[sub_resource type="GDScript" id="GDScript_04uwe"]
+script/source = "extends Control
+@onready var resume_button_paused = $MarginContainer/VBoxContainer/Resume_Button_Paused as Button
+@onready var quit_button_paused = $MarginContainer/VBoxContainer/Quit_Button_Paused as Button
+@onready var achievement_button_paused = $MarginContainer/VBoxContainer/Achievement_Button_Paused as Button
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	resume_button_paused.button_down.connect(on_resume_pressed)
+	quit_button_paused.button_down.connect(on_quit_pressed)
+	achievement_button_paused.button_down.connect(on_achievement_pressed)
+
+
+func on_resume_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/level_menu.tscn\")
+	
+func on_quit_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/level_menu.tscn\")
+
+func on_achievement_pressed() -> void:
+	pass
+"
+
+[node name="Pause_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_04uwe")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 400
+theme_override_constants/margin_right = 400
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Resume_Button_Paused" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qb1d1")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = ExtResource("4_qhkv1")
+theme_override_styles/normal = ExtResource("3_mjhve")
+text = "Resume
+"
+
+[node name="Quit_Button_Paused" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qb1d1")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = ExtResource("4_qhkv1")
+theme_override_styles/normal = ExtResource("3_mjhve")
+text = "Quit Level
+"
+
+[node name="Achievement_Button_Paused" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qb1d1")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = ExtResource("4_qhkv1")
+theme_override_styles/normal = ExtResource("3_mjhve")
+text = "Achievements
+"

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://gr258qp8wrmu"]
+
+[ext_resource type="Texture2D" uid="uid://rfmc15euwqej" path="res://assets/sprites/final/animations_final.png" id="1_me7ff"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11d70"]
+atlas = ExtResource("1_me7ff")
+region = Rect2(240, 75, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex8ki"]
+atlas = ExtResource("1_me7ff")
+region = Rect2(220, 75, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud268"]
+atlas = ExtResource("1_me7ff")
+region = Rect2(200, 75, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpikw"]
+atlas = ExtResource("1_me7ff")
+region = Rect2(180, 75, 20, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uc2my"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11d70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex8ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud268")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpikw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks1x3"]
+size = Vector2(14, 19)
+
+[node name="PenguinIdle" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uc2my")
+autoplay = "default"
+frame_progress = 0.163273
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_ks1x3")

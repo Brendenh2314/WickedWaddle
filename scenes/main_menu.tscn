@@ -1,0 +1,186 @@
+[gd_scene load_steps=11 format=3 uid="uid://cpyjm27iw0msr"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_lj1gq"]
+[ext_resource type="Texture2D" uid="uid://cipke1ntpjakq" path="res://assets/sprites/ui/ui_assets_background.png" id="1_svnku"]
+[ext_resource type="FontFile" uid="uid://bbph01mkrijr0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_5k5by"]
+[ext_resource type="Texture2D" uid="uid://d3ereg0xgfc6f" path="res://assets/sprites/final/ui_assets_final_midground.png" id="4_rqyam"]
+[ext_resource type="StyleBox" uid="uid://botfn0ix8yubx" path="res://assets/colors/main_menu_button_normal.tres" id="5_4rrub"]
+[ext_resource type="StyleBox" uid="uid://tcb8qdn0pkkd" path="res://assets/colors/main_menu_button_hover.tres" id="6_esrbd"]
+[ext_resource type="PackedScene" uid="uid://b3djik3jvwvat" path="res://scenes/baby_penguin.tscn" id="7_ibgpr"]
+[ext_resource type="PackedScene" uid="uid://4ovuiypwlnuw" path="res://scenes/flag.tscn" id="8_2tuuk"]
+[ext_resource type="PackedScene" uid="uid://gr258qp8wrmu" path="res://scenes/penguin_Idle.tscn" id="9_hncr2"]
+
+[sub_resource type="Theme" id="Theme_b7rfh"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+script = ExtResource("1_lj1gq")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.997434, 1)
+size_flags_vertical = 3
+texture = ExtResource("1_svnku")
+expand_mode = 2
+
+[node name="Midground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = 214.0
+offset_right = 9.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("4_rqyam")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_b7rfh")
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="GameTitleVBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/GameTitleVBox"]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="MarginContainer/GameTitleVBox"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_5k5by")
+theme_override_font_sizes/font_size = 80
+text = "Game Title"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="MenuButtonVBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator4" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator5" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator6" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator7" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator8" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator9" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator10" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator11" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator12" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator13" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator14" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator15" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator16" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Seperator17" type="Control" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+layout_mode = 2
+
+[node name="Play_Button" type="Button" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5k5by")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = ExtResource("6_esrbd")
+theme_override_styles/normal = ExtResource("5_4rrub")
+text = "Play
+"
+
+[node name="Quit_Button" type="Button" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5k5by")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = ExtResource("6_esrbd")
+theme_override_styles/normal = ExtResource("5_4rrub")
+text = "Quit
+"
+
+[node name="Credit_Button" type="Button" parent="MarginContainer/HBoxContainer/MenuButtonVBox"]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5k5by")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = ExtResource("6_esrbd")
+theme_override_styles/normal = ExtResource("5_4rrub")
+text = "Credits
+"
+
+[node name="BabyPenguin" parent="." instance=ExtResource("7_ibgpr")]
+position = Vector2(506, 81)
+scale = Vector2(3.76375, 3.23364)
+
+[node name="BabyPenguin2" parent="." instance=ExtResource("7_ibgpr")]
+position = Vector2(332, 280)
+scale = Vector2(3.76375, 3.23364)
+
+[node name="BabyPenguin3" parent="." instance=ExtResource("7_ibgpr")]
+position = Vector2(824, 468)
+scale = Vector2(3.76375, 3.23364)
+
+[node name="Flag" parent="." instance=ExtResource("8_2tuuk")]
+position = Vector2(1065, 165)
+scale = Vector2(4.35059, 4.35059)
+
+[node name="PenguinIdle" parent="." instance=ExtResource("9_hncr2")]
+position = Vector2(101, 359)
+scale = Vector2(3.37068, 3.37068)

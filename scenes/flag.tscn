@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://4ovuiypwlnuw"]
+
+[ext_resource type="Texture2D" uid="uid://rfmc15euwqej" path="res://assets/sprites/final/animations_final.png" id="1_pxp3x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq6in"]
+atlas = ExtResource("1_pxp3x")
+region = Rect2(60, 200, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oebws"]
+atlas = ExtResource("1_pxp3x")
+region = Rect2(80, 200, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvj3d"]
+atlas = ExtResource("1_pxp3x")
+region = Rect2(100, 200, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhx6c"]
+atlas = ExtResource("1_pxp3x")
+region = Rect2(120, 200, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rivkt"]
+atlas = ExtResource("1_pxp3x")
+region = Rect2(140, 200, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubjgt"]
+atlas = ExtResource("1_pxp3x")
+region = Rect2(160, 200, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7edw"]
+atlas = ExtResource("1_pxp3x")
+region = Rect2(180, 200, 20, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0o6t"]
+atlas = ExtResource("1_pxp3x")
+region = Rect2(200, 200, 20, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_okag2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq6in")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oebws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvj3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhx6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rivkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubjgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7edw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0o6t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7yp5"]
+size = Vector2(5, 36)
+
+[node name="Flag" type="Area2D"]
+
+[node name="flagAnimation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_okag2")
+autoplay = "default"
+frame_progress = 0.863384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.5, 2)
+shape = SubResource("RectangleShape2D_j7yp5")

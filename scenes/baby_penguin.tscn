@@ -1,0 +1,106 @@
+[gd_scene load_steps=16 format=3 uid="uid://b3djik3jvwvat"]
+
+[ext_resource type="Script" path="res://scripts/baby_penguin.gd" id="1_7gkjk"]
+[ext_resource type="Texture2D" uid="uid://rfmc15euwqej" path="res://assets/sprites/final/animations_final.png" id="2_r86i2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_20k1f"]
+radius = 5.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwllp"]
+atlas = ExtResource("2_r86i2")
+region = Rect2(180, 25, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffa5s"]
+atlas = ExtResource("2_r86i2")
+region = Rect2(200, 25, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn2ic"]
+atlas = ExtResource("2_r86i2")
+region = Rect2(220, 25, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpl1y"]
+atlas = ExtResource("2_r86i2")
+region = Rect2(240, 25, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7a4d"]
+atlas = ExtResource("2_r86i2")
+region = Rect2(260, 25, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kw07"]
+atlas = ExtResource("2_r86i2")
+region = Rect2(280, 25, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edkxt"]
+atlas = ExtResource("2_r86i2")
+region = Rect2(300, 25, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blr6a"]
+atlas = ExtResource("2_r86i2")
+region = Rect2(320, 25, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33w65"]
+atlas = ExtResource("2_r86i2")
+region = Rect2(340, 25, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsno5"]
+atlas = ExtResource("2_r86i2")
+region = Rect2(360, 25, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bhj0"]
+atlas = ExtResource("2_r86i2")
+region = Rect2(380, 25, 20, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gii25"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwllp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffa5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn2ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpl1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7a4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kw07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edkxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blr6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33w65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsno5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bhj0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="BabyPenguin" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_7gkjk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_20k1f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gii25")
+autoplay = "default"
+frame_progress = 0.613717
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

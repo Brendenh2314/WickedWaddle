@@ -1,0 +1,101 @@
+[gd_scene load_steps=9 format=3 uid="uid://depxgavolfjlh"]
+
+[ext_resource type="Script" path="res://scripts/paused_menu.gd" id="1_lrr6k"]
+[ext_resource type="FontFile" uid="uid://bbph01mkrijr0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_n3jx0"]
+[ext_resource type="Texture2D" uid="uid://danh2jyssjk82" path="res://assets/sprites/final/ui_assets_final.png" id="2_rccyw"]
+[ext_resource type="FontFile" uid="uid://b23rm1n8pnean" path="res://assets/fonts/PixelOperator8.ttf" id="3_tku1k"]
+[ext_resource type="StyleBox" uid="uid://c42j5jhq0a3id" path="res://assets/colors/level_menu_button_normal.tres" id="5_eicw0"]
+[ext_resource type="StyleBox" uid="uid://bc7chk5o3700j" path="res://assets/colors/level_menu_button_hover.tres" id="6_o7c6x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1crew"]
+atlas = ExtResource("2_rccyw")
+region = Rect2(540, 20, 80, 81)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6eu45"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1crew")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PausedMenu" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lrr6k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.458824, 0.458824, 0.458824, 0.682353)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(570, 325)
+scale = Vector2(5, 5.582)
+sprite_frames = SubResource("SpriteFrames_6eu45")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -51.0
+offset_right = 96.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 15
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_n3jx0")
+theme_override_font_sizes/font_size = 32
+text = "Paused"
+
+[node name="GridContainer2" type="GridContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/v_separation = 15
+
+[node name="ResumeBtn" type="Button" parent="GridContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tku1k")
+theme_override_styles/hover = ExtResource("6_o7c6x")
+theme_override_styles/normal = ExtResource("5_eicw0")
+text = "Resume Game"
+
+[node name="HowToPlayBtn" type="Button" parent="GridContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tku1k")
+theme_override_styles/hover = ExtResource("6_o7c6x")
+theme_override_styles/normal = ExtResource("5_eicw0")
+text = "How To Play"
+
+[node name="QuitBtn" type="Button" parent="GridContainer/GridContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tku1k")
+theme_override_styles/hover = ExtResource("6_o7c6x")
+theme_override_styles/normal = ExtResource("5_eicw0")
+text = "Quit"
+
+[connection signal="pressed" from="GridContainer/GridContainer2/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="GridContainer/GridContainer2/HowToPlayBtn" to="." method="_on_how_to_play_btn_pressed"]
+[connection signal="pressed" from="GridContainer/GridContainer2/QuitBtn" to="." method="_on_quit_btn_pressed"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cybs1qkd7wv8c"]
+
+[ext_resource type="Script" path="res://scripts/jump_pad.gd" id="1_bgil3"]
+[ext_resource type="Texture2D" uid="uid://o8spcv0qarm6" path="res://assets/sprites/world_tileset.png" id="1_l3fm3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veqr2"]
+atlas = ExtResource("1_l3fm3")
+region = Rect2(80, 144, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_darok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veqr2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gx2h"]
+size = Vector2(18, 5)
+
+[node name="jumpPad" type="Area2D" groups=["JumpPads"]]
+script = ExtResource("1_bgil3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["jumpPads"]]
+sprite_frames = SubResource("SpriteFrames_darok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["JumpPads"]]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_7gx2h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_jumpPad_body_entered"]

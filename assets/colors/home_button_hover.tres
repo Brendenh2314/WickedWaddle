@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://ckljefd674q3w"]
+
+[ext_resource type="Texture2D" uid="uid://b2iit3xug6vs8" path="res://assets/sprites/ui/ui_assets_home_button.png" id="1_bryam"]
+
+[resource]
+texture = ExtResource("1_bryam")
+modulate_color = Color(0.707967, 0.707967, 0.707966, 1)

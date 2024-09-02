@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://dugbt3g3acp0e"]
+
+[ext_resource type="Texture2D" uid="uid://danh2jyssjk82" path="res://assets/sprites/final/ui_assets_final.png" id="1_g13nd"]
+[ext_resource type="Script" path="res://scripts/achievement_menu.gd" id="1_g16su"]
+[ext_resource type="FontFile" uid="uid://bbph01mkrijr0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_5jsn8"]
+[ext_resource type="FontFile" uid="uid://b23rm1n8pnean" path="res://assets/fonts/PixelOperator8.ttf" id="3_nitcx"]
+[ext_resource type="Texture2D" uid="uid://b2iit3xug6vs8" path="res://assets/sprites/ui/ui_assets_home_button.png" id="4_mxpxl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk6kk"]
+atlas = ExtResource("1_g13nd")
+region = Rect2(360, 20, 160, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ljgds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk6kk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jxxrx"]
+
+[node name="AchievementMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g16su")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(570.833, 326)
+scale = Vector2(4.365, 4.501)
+sprite_frames = SubResource("SpriteFrames_ljgds")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.0
+offset_top = -91.0
+offset_right = 299.0
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_nitcx")
+theme_override_font_sizes/font_size = 5
+text = "Achievement 1"
+label_settings = SubResource("LabelSettings_jxxrx")
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_mxpxl")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 828.0
+offset_top = 139.0
+offset_right = 891.0
+offset_bottom = 205.0
+
+[node name="LevelLable" type="Label" parent="."]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 139.0
+offset_right = 828.0
+offset_bottom = 179.0
+theme_override_fonts/font = ExtResource("2_5jsn8")
+theme_override_font_sizes/font_size = 40
+text = "Achievements"
+
+[connection signal="pressed" from="Button" to="." method="_on_exit_button_pressed"]
