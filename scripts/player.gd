@@ -16,19 +16,16 @@ var faceplant_fall_height = 250
 var start_fall_height = 0
 var is_faceplant = false
 
+# Penguin collection tracking
+var penguins_collected = 0
+var total_penguins = 3
+
 # Level completion tracking
 var level_complete = false
 
-# Achievement-related variables
-var level_one_achievement_completed = false
-
-#Signals
-signal achievement_completed(level, achievement_name)
-
-
-func _ready():
-	# Connect the level complete signal
-	$"/root/NextLevel".connect("next_level_level_complete", Callable(self, "_on_next_level_level_complete"))
+#func _ready():
+	## Connect the level complete signal
+	#$"/root/NextLevel".connect("next_level_level_complete", Callable(self, "_on_next_level_level_complete"))
 
 func _physics_process(delta):
 	if not game_started:
@@ -101,10 +98,10 @@ func _input(delta):
 	if Input.is_action_just_pressed("ui_start") and not game_started:
 		game_started = true  # Start the game when the correct button is pressed
 
-func _on_next_level_level_complete():
-	if jump_counter < 15:
-		emit_signal("achievement_completed", 1, "Complete Level 1 with < 15 Jumps")
-		level_one_achievement_completed = true
-		print("Level 1 Achievement Completed")
+func _on_level_complete():
+	if penguins_collected >= total_penguins:
+		print("Level completed with all penguins collected!")
+		level_complete = true
+		# Proceed to next level or show level completion menu
 	else:
-		print("Level completed, but jump count exceeded the limit.")
+		print("You must collect all penguins to complete the level!")

@@ -612,6 +612,7 @@ script = ExtResource("9_8780f")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="NextLevelMenu" parent="CanvasLayer" instance=ExtResource("9_labnl")]
+visible = false
 
 [node name="PausedMenu" parent="CanvasLayer" instance=ExtResource("9_a8ra5")]
 

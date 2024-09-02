@@ -1,5 +1,7 @@
 extends Control
 
+@onready var level_complete_sound: AudioStreamPlayer2D = $LevelCompleteSound
+
 var _is_level_complete:bool = false:
 	set(value):
 		_is_level_complete = value
@@ -22,6 +24,7 @@ func _ready() -> void:
 
 func _on_next_level_level_complete():
 	print("Next level menu triggered")
+	level_complete_sound.play()
 	visible = true
 	get_tree().paused = true
 	
@@ -35,9 +38,10 @@ func _on_next_level_btn_pressed():
 	get_tree().paused = false
 	get_tree().change_scene_to_file(next_level_path)
 
-func _on_achievement_btn_pressed():
-	print("Achievement signal is being emitted")
-	emit_signal("show_achievement_menu")
+func _on_restart_btn_pressed():
+	_is_level_complete = false
+	get_tree().paused = false
+	get_tree().change_scene_to_file(current_scene_file)
 	
 func _on_quit_btn_pressed():
 	get_tree().paused = false

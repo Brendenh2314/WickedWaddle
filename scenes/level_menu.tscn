@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7xpd103iu4gt"]
+[gd_scene load_steps=11 format=3 uid="uid://b7xpd103iu4gt"]
 
 [ext_resource type="Script" path="res://scripts/level_menu.gd" id="1_mwge4"]
 [ext_resource type="Texture2D" uid="uid://cipke1ntpjakq" path="res://assets/sprites/ui/ui_assets_background.png" id="2_pwpul"]
@@ -8,7 +8,6 @@
 [ext_resource type="StyleBox" uid="uid://bc7chk5o3700j" path="res://assets/colors/level_menu_button_hover.tres" id="6_ekr4q"]
 [ext_resource type="StyleBox" uid="uid://c7lahphaonb7o" path="res://assets/colors/home_button_normal.tres" id="7_a6qkb"]
 [ext_resource type="StyleBox" uid="uid://ckljefd674q3w" path="res://assets/colors/home_button_hover.tres" id="8_i3chp"]
-[ext_resource type="PackedScene" uid="uid://dugbt3g3acp0e" path="res://scenes/achievement_menu.tscn" id="9_kdrgp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pk6kk"]
 atlas = ExtResource("3_fobps")
@@ -191,23 +190,3 @@ theme_override_styles/disabled = ExtResource("8_i3chp")
 theme_override_styles/hover = ExtResource("8_i3chp")
 theme_override_styles/pressed = ExtResource("8_i3chp")
 theme_override_styles/normal = ExtResource("7_a6qkb")
-
-[node name="AchievementButton" type="Button" parent="."]
-layout_mode = 2
-offset_left = 1048.0
-offset_top = 550.0
-offset_right = 1700.0
-offset_bottom = 1098.0
-scale = Vector2(0.116235, 0.124726)
-theme_override_styles/focus = ExtResource("8_i3chp")
-theme_override_styles/disabled = ExtResource("8_i3chp")
-theme_override_styles/hover = ExtResource("8_i3chp")
-theme_override_styles/pressed = ExtResource("8_i3chp")
-theme_override_styles/normal = ExtResource("7_a6qkb")
-
-[node name="AchievementMenu" parent="." instance=ExtResource("9_kdrgp")]
-visible = false
-layout_mode = 1
-
-[connection signal="show_achievement_menu" from="." to="AchievementMenu" method="_on_levels_show_achievement_menu"]
-[connection signal="pressed" from="AchievementButton" to="." method="_on_achievement_button_pressed"]

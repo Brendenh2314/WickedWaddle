@@ -6,9 +6,8 @@ signal show_achievement_menu
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	home_button.button_down.connect(on_home_pressed)
-	# Make sure to adjust the path according to your actual scene structure.
 	var container = get_node("MarginContainer/MarginContainer/LevelVBox/GridContainer")  # Adjust if the name of your VBoxContainer is different.
-	for level in range(1, 11):  # Adjust the range based on your number of levels
+	for level in range(1, 11):  # Adjust the range based on number of levels
 		var button_path = "Level" + str(level) + "Button"
 		if container.has_node(button_path):
 			var button = container.get_node(button_path)
@@ -16,7 +15,6 @@ func _ready():
 		else:
 			print("Button not found: ", button_path)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _on_LevelButton_pressed(level):
 	print("Level " + str(level) + " was selected.")
 	# Load the level using a PackedScene. Ensure the path and level numbering match your project setup

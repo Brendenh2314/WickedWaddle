@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbnd301tawagr"]
+
+[ext_resource type="AudioStream" uid="uid://7mnsijnxxy5d" path="res://assets/music/sad-dramatic-game-music-by-kk-sample-loop-31391.mp3" id="1_8e168"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_8e168")
+autoplay = true
+bus = &"Music"

@@ -73,8 +73,8 @@ layout_mode = 2
 layout_mode = 2
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_5k5by")
-theme_override_font_sizes/font_size = 80
-text = "Game Title"
+theme_override_font_sizes/font_size = 70
+text = "Wicked Waddle"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -166,11 +166,11 @@ text = "Credits
 "
 
 [node name="BabyPenguin" parent="." instance=ExtResource("7_ibgpr")]
-position = Vector2(506, 81)
+position = Vector2(454, 81)
 scale = Vector2(3.76375, 3.23364)
 
 [node name="BabyPenguin2" parent="." instance=ExtResource("7_ibgpr")]
-position = Vector2(332, 280)
+position = Vector2(332, 277)
 scale = Vector2(3.76375, 3.23364)
 
 [node name="BabyPenguin3" parent="." instance=ExtResource("7_ibgpr")]

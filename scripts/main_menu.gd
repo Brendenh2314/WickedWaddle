@@ -21,4 +21,4 @@ func on_quit_pressed() -> void:
 	get_tree().quit()
 
 func on_credit_pressed() -> void:
-	pass
+	get_tree().change_scene_to_file("res://scenes/credits.tscn")
