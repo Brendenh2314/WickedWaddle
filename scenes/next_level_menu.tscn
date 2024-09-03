@@ -55,13 +55,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -140.0
-offset_top = -61.0
-offset_right = 140.0
-offset_bottom = 61.0
+offset_top = -131.0
+offset_right = 139.0
+offset_bottom = 83.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 14
 
 [node name="Label" type="Label" parent="GridContainer"]
 layout_mode = 2
@@ -72,37 +70,43 @@ text = "Level Completed"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="GridContainer2" type="GridContainer" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/v_separation = 15
+[node name="LevelCompleteSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_8rahc")
+bus = &"Sound"
 
-[node name="NextLevelBtn" type="Button" parent="GridContainer/GridContainer2"]
+[node name="GridContainer2" type="GridContainer" parent="."]
+layout_mode = 2
+offset_left = 511.0
+offset_top = 320.0
+offset_right = 639.0
+offset_bottom = 428.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 30
+
+[node name="NextLevelBtn" type="Button" parent="GridContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_4hs4p")
 theme_override_styles/hover = ExtResource("6_5mtbg")
 theme_override_styles/normal = ExtResource("5_pilim")
 text = "Next Level"
 
-[node name="RestartBtn" type="Button" parent="GridContainer/GridContainer2"]
+[node name="RestartBtn" type="Button" parent="GridContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_4hs4p")
 theme_override_styles/hover = ExtResource("6_5mtbg")
 theme_override_styles/normal = ExtResource("5_pilim")
 text = "Restart"
 
-[node name="QuitBtn" type="Button" parent="GridContainer/GridContainer2"]
+[node name="QuitBtn" type="Button" parent="GridContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_4hs4p")
 theme_override_styles/hover = ExtResource("6_5mtbg")
 theme_override_styles/normal = ExtResource("5_pilim")
-text = "Quit
+text = "Level Menu
 "
 
-[node name="LevelCompleteSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_8rahc")
-bus = &"Sound"
-
-[connection signal="pressed" from="GridContainer/GridContainer2/NextLevelBtn" to="." method="_on_next_level_btn_pressed"]
-[connection signal="pressed" from="GridContainer/GridContainer2/RestartBtn" to="." method="_on_restart_btn_pressed"]
-[connection signal="pressed" from="GridContainer/GridContainer2/QuitBtn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="GridContainer2/NextLevelBtn" to="." method="_on_next_level_btn_pressed"]
+[connection signal="pressed" from="GridContainer2/RestartBtn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="GridContainer2/QuitBtn" to="." method="_on_quit_btn_pressed"]

@@ -621,7 +621,7 @@ offset_top = -58.0
 offset_right = 676.0
 offset_bottom = 17.0
 theme_override_fonts/font = ExtResource("12_21kco")
-text = "Touch The Jump Pad To Jump Higher"
+text = "Land On The Jump Pad To Jump Higher"
 autowrap_mode = 2
 
 [connection signal="level_complete" from="NextLevel" to="CanvasLayer/NextLevelMenu" method="_on_next_level_level_complete"]

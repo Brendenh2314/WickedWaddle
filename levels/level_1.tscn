@@ -532,7 +532,7 @@ offset_top = -33.0
 offset_right = 86.0
 offset_bottom = 2.0
 theme_override_fonts/font = ExtResource("10_3idqk")
-text = "Click Space To Start"
+text = "Press Space To Start"
 autowrap_mode = 2
 
 [node name="Label5" type="Label" parent="Text"]
@@ -541,7 +541,7 @@ offset_top = -50.0
 offset_right = 583.0
 offset_bottom = 4.0
 theme_override_fonts/font = ExtResource("10_3idqk")
-text = "Click Left Arrow To Slow Down"
+text = "Hold Left Arrow To Slow Down"
 autowrap_mode = 2
 
 [node name="Label6" type="Label" parent="Text"]
@@ -550,7 +550,7 @@ offset_top = -50.0
 offset_right = 848.0
 offset_bottom = 4.0
 theme_override_fonts/font = ExtResource("10_3idqk")
-text = "Click Right Arrow To Speed Up"
+text = "Hold Right Arrow To Speed Up"
 autowrap_mode = 2
 
 [node name="Label4" type="Label" parent="Text"]
@@ -559,7 +559,7 @@ offset_top = -33.0
 offset_right = 328.0
 offset_bottom = 2.0
 theme_override_fonts/font = ExtResource("10_3idqk")
-text = "Click Space To Jump"
+text = "Press Space To Jump"
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="Text"]
@@ -577,7 +577,7 @@ offset_top = -50.0
 offset_right = 1378.0
 offset_bottom = 4.0
 theme_override_fonts/font = ExtResource("10_3idqk")
-text = "Touch The Flag To Finish The Level"
+text = "Reach The Flag To Finish The Level"
 autowrap_mode = 2
 
 [connection signal="level_complete" from="NextLevel" to="Player" method="_on_next_level_level_complete"]

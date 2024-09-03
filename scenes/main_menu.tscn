@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpyjm27iw0msr"]
+[gd_scene load_steps=16 format=3 uid="uid://cpyjm27iw0msr"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_lj1gq"]
 [ext_resource type="Texture2D" uid="uid://cipke1ntpjakq" path="res://assets/sprites/ui/ui_assets_background.png" id="1_svnku"]
@@ -9,8 +9,19 @@
 [ext_resource type="PackedScene" uid="uid://b3djik3jvwvat" path="res://scenes/baby_penguin.tscn" id="7_ibgpr"]
 [ext_resource type="PackedScene" uid="uid://4ovuiypwlnuw" path="res://scenes/flag.tscn" id="8_2tuuk"]
 [ext_resource type="PackedScene" uid="uid://gr258qp8wrmu" path="res://scenes/penguin_Idle.tscn" id="9_hncr2"]
+[ext_resource type="StyleBox" uid="uid://c8ndjgl0l4qgi" path="res://assets/colors/muted_normal.tres" id="10_tse4e"]
+[ext_resource type="StyleBox" uid="uid://cyfcmf0sytono" path="res://assets/colors/sound_on_normal.tres" id="11_3x27q"]
+[ext_resource type="Texture2D" uid="uid://danh2jyssjk82" path="res://assets/sprites/final/ui_assets_final.png" id="11_ki4w5"]
 
 [sub_resource type="Theme" id="Theme_b7rfh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cefjk"]
+texture = ExtResource("11_ki4w5")
+region_rect = Rect2(441, 182, 18, 17)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_axc0w"]
+texture = ExtResource("11_ki4w5")
+region_rect = Rect2(421, 182, 18, 17)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -184,3 +195,28 @@ scale = Vector2(4.35059, 4.35059)
 [node name="PenguinIdle" parent="." instance=ExtResource("9_hncr2")]
 position = Vector2(101, 359)
 scale = Vector2(3.37068, 3.37068)
+
+[node name="MuteButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 42.0
+offset_top = 41.0
+offset_right = 694.0
+offset_bottom = 589.0
+scale = Vector2(0.116235, 0.124726)
+theme_override_styles/disabled = ExtResource("10_tse4e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cefjk")
+theme_override_styles/normal = ExtResource("11_3x27q")
+
+[node name="UnmuteButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 41.0
+offset_right = 694.0
+offset_bottom = 589.0
+scale = Vector2(0.116235, 0.124726)
+theme_override_styles/hover = SubResource("StyleBoxTexture_axc0w")
+theme_override_styles/normal = ExtResource("10_tse4e")
+
+[connection signal="pressed" from="MuteButton" to="." method="_on_mute_button_pressed"]
+[connection signal="pressed" from="UnmuteButton" to="." method="_on_unmute_button_pressed"]

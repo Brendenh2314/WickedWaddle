@@ -1,6 +1,9 @@
 extends Control
 
 @onready var level_complete_sound: AudioStreamPlayer2D = $LevelCompleteSound
+@onready var label: Label = $GridContainer/Label
+@onready var next_level_btn: Button = $GridContainer2/NextLevelBtn
+
 
 var _is_level_complete:bool = false:
 	set(value):
@@ -25,6 +28,15 @@ func _ready() -> void:
 func _on_next_level_level_complete():
 	print("Next level menu triggered")
 	level_complete_sound.play()
+
+	# Update the label based on the current level
+	if next_level_number > 10:
+		label.text = "Game Complete"
+		next_level_btn.visible = false  # Hide the next level button on level 10
+	else:
+		label.text = "Level " + str(current_scene_file.to_int()) + " Complete"
+		next_level_btn.visible = true  # Show the next level button on levels 1-9
+
 	visible = true
 	get_tree().paused = true
 	

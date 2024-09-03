@@ -74,8 +74,8 @@ layout_mode = 2
 custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 20
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 35
 columns = 2
 
 [node name="Level1Button" type="Button" parent="MarginContainer/MarginContainer/LevelVBox/GridContainer"]
